@@ -1,0 +1,28 @@
+# Prepare CPU beauty checks and a wider roof shot, 29 October 2026, 19:10 Europe/Paris.
+import json,os
+root='/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana'
+configpath=root+'/Scripts/Cinematic/Shots.json';config=json.load(open(configpath))
+shot=config['shots'][2];cam=hou.node('/stage/CINE_03_RoofDetail')
+for endpoint,key in enumerate(['start','end']):
+ target=shot['targetStart' if endpoint==0 else 'targetEnd']
+ position=[target[i]+(shot[key][i]-target[i])*1.22 for i in range(3)];shot[key]=position
+ for axis,value in zip(['tx','ty','tz'],position):
+  k=hou.Keyframe();k.setFrame(241+endpoint*119);k.setValue(value);k.setExpression('bezier()',hou.exprLanguage.Hscript);cam.parm(axis).setKeyframe(k)
+json.dump(config,open(configpath,'w'),indent=2)
+geo=hou.node('/obj/Church_Lookdev');clean=geo.node('CINE_REMOVE_MANNY') or geo.createNode('blast','CINE_REMOVE_MANNY')
+clean.setInput(0,geo.node('OUT_church_lookdev'));clean.parm('group').set('@name=manny')
+hou.node('/stage/PC_import').parm('soppath').set(clean.path())
+assert 'manny' not in set(clean.geometry().primStringAttribValues('name'))
+stage=hou.node('/stage');settings=stage.node('CINE_KARMA_SETTINGS') or stage.createNode('karmarendersettings','CINE_KARMA_SETTINGS')
+settings.setInput(0,stage.node('CINE_REVIEW'))
+settings.parm('camera').set('/cameras/CINE_TIMELINE');settings.parm('engine').set('cpu');settings.parm('res_mode').set('manual');settings.parm('resolutionx').set(1920);settings.parm('resolutiony').set(1080)
+settings.parm('picture').set(root+'/render/Cinematic-29-October-2026/Beauty.$F4.exr')
+os.makedirs(root+'/render/Cinematic-29-October-2026',exist_ok=True)
+settings.setDisplayFlag(True)
+rop=stage.node('CINE_KARMA_RENDER') or stage.createNode('usdrender_rop','CINE_KARMA_RENDER');rop.setInput(0,settings);rop.parm('renderer').set('BRAY_HdKarma');rop.parm('trange').set('normal');rop.parmTuple('f').set((1,720,1));rop.parm('rendersettings').set('/Render/CINE_KARMA_SETTINGS')
+hou.playbar.stop();hou.setFrame(1);hou.hipFile.save()
+for frame in [1,241]:
+ hou.setFrame(frame)
+ settings.stage().Export(root+'/render/Cinematic-29-October-2026/Check%04d.usda'%frame)
+hou.setFrame(1)
+result={'removed_mannequins':True,'roof_camera_distance_scale':1.22,'resolution':[1920,1080],'settings':settings.path(),'rop':rop.path(),'check_usd_frames':[1,241]}

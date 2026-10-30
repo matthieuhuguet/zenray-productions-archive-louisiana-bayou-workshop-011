@@ -1,0 +1,86 @@
+{
+  "_comment": "21 October 2026 : the articles of the Louisiana Bayou project, one entry each ; BuildArticles.py freezes each source page (its scripts run once in an isolated Chromium), embeds its styles, fonts and images, and writes one self-contained HTML per article in Articles/, plus Articles/index.html, the project's article (the index). Change a value here, then run the build. FR : les articles du projet, un par entrée.",
+  "project": "louisiana-bayou",
+  "drive": "https://zenray-progress.pages.dev/?project=louisiana-bayou",
+  "source_id": "workshop",
+  "out_dir": "Articles",
+  "image_max_px": 1600,
+  "image_quality": 80,
+  "thumbnail_px": [
+    960,
+    540
+  ],
+  "freeze_wait_ms": 800,
+  "viewport": [
+    1440,
+    900
+  ],
+  "index_title": "Louisiana Bayou : articles",
+  "index_intro": "Index des articles du projet Louisiana Bayou, du plus ancien au plus récent. Chaque lien ouvre la dernière version du fichier dans le drive : lue en direct sur le Mac quand il est connecté, sinon depuis sa dernière archive.",
+  "articles": [
+    {
+      "slug": "01-lecon-du-toit",
+      "title": "Leçon du toit : trim sheet, tuiles et texel density",
+      "date": "9 October 2026",
+      "source": "/Users/zenray/.claude/skills/zenray-houdini/lessons/roof-tiles/index.html",
+      "status": "Leçon",
+      "summary": "Le toit de la chapelle découpé en tuiles, la trim sheet de bardeaux, la texel density et six cas concrets (personnages, props, bâtiments)."
+    },
+    {
+      "slug": "02-lecon-texel-density",
+      "title": "Leçon du toit, annexe : texel density",
+      "date": "9 October 2026",
+      "source": "/Users/zenray/.claude/skills/zenray-houdini/lessons/roof-tiles/texel-density.html",
+      "status": "Annexe",
+      "summary": "La page annexe de la leçon du toit : ce que mesure la texel density et comment la choisir."
+    },
+    {
+      "slug": "03-lecon-uv-texel-density",
+      "title": "UV et texel density",
+      "date": "19 October 2026",
+      "source": "/Users/zenray/.claude/skills/zenray-houdini/lessons/uv-texel-density/index.html",
+      "status": "Leçon",
+      "summary": "Les UV de A à Z, la texel density et le choix entre les cinq méthodes de texturing (unique, tileable, trim sheet, couches, decals)."
+    },
+    {
+      "slug": "04-banc-zenray-uv-cinq-methodes",
+      "title": "Banc ZenRay UV : les cinq méthodes",
+      "date": "20 October 2026",
+      "source": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/03_work/uv/ZenRayUV_5Methods_19-October-2026/runs/index.html",
+      "status": "Labs",
+      "summary": "Le premier banc : M1 à M5 sur l'arche, le rubber toy, le shader ball et Manny. M2 à M5 sont passés en Labs le 20 October 2026."
+    },
+    {
+      "slug": "05-banc-zenray-uv-m1",
+      "title": "Banc ZenRay UV : M1, le découpage d'artiste",
+      "date": "21 October 2026",
+      "source": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/03_work/uv/ZenRayUV_5Methods_19-October-2026/runs/m1.html",
+      "status": "Méthode courante",
+      "summary": "M1 seule, en planches : découpe, tuiles, damier, îles numérotées et densité de chaque asset, avec ses dimensions et ses règles d'artiste."
+    },
+    {
+      "slug": "06-documentation-zenray-height",
+      "title": "Documentation : ZenRay Height",
+      "date": "23 October 2026",
+      "source": "/Users/zenray/.claude/skills/zenray-houdini/docs/zenray-height/index.html",
+      "status": "Documentation",
+      "summary": "Le module ZenRay Height à date : la chaîne d'un asset de la height dessinée aux cinq cartes PBR, les modules, leurs paramètres, les résultats mesurés et les prompts, relus dans le code à chaque construction."
+    },
+    {
+      "slug": "07-documentation-zenray-houdini",
+      "title": "Documentation : ZenRay Houdini",
+      "date": "23 October 2026",
+      "source": "/Users/zenray/.claude/skills/zenray-houdini/docs/zenray-houdini/index.html",
+      "status": "Documentation",
+      "summary": "Le skill ZenRay Houdini à date : ses entrées, ses outils MCP, ses dossiers de scripts et ses fichiers de connaissance, relus dans le code à chaque construction."
+    },
+    {
+      "slug": "08-roof-summary",
+      "title": "Le toit de la chapelle en trois paragraphes",
+      "date": "29 October 2026",
+      "source": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/Articles/RoofSummary-29-October-2026/index.html",
+      "status": "Synthèse",
+      "summary": "La forme du toit, les rangées de bardeaux et la texture de bois, expliquées simplement en trois paragraphes."
+    }
+  ]
+}

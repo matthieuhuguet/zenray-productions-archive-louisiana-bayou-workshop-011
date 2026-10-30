@@ -1,0 +1,59 @@
+{
+ "video_seconds": 46.0,
+ "sample_rate": 48000,
+ "crossfade_seconds": 2.0,
+ "end_fade": 2.0,
+ "motion_start": 3.0,
+ "motion_end": 9.0,
+ "music_lufs": -18,
+ "wind_lufs": -27,
+ "out_dir": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/render/ZRS-29-October-2026/Montage",
+ "main": {
+  "file": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/render/ZRS-29-October-2026/Montage/audio_src/nuit_sur_lumiere.wav",
+  "attack_between": [
+   199.8,
+   200.4
+  ],
+  "preroll": 0.01,
+  "fade_in": 0.03
+ },
+ "second": {
+  "file": "/Users/zenray/Library/Mobile Documents/com~apple~CloudDocs/Music/Final Fantasy VII Remake/Disc 3/3.21 Aerith's Theme - Home Again.mp3",
+  "start": 80.0
+ },
+ "wind": {
+  "file": "/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/render/ZRS-29-October-2026/Montage/audio_src/wind_ghost_of_tsushima_10m00_60s.wav",
+  "start_a": 0.0,
+  "start_b": 10.0,
+  "fade": 1.0,
+  "end_fade": 2.0
+ },
+ "motion_sfx": {
+  "dir": "/Users/zenray/.claude/tmp/tmp-zenray-motion-design/motion-projects/zenray-sony-playstation-f-ppm/assets",
+  "clip_lufs": -24,
+  "clips": [
+   {
+    "id": "lens",
+    "file": "son1-v3.wav",
+    "start": 0.0,
+    "duration": 3.0,
+    "gain_db": 1.0
+   },
+   {
+    "id": "dimension",
+    "file": "son2-v3-5s.wav",
+    "start": 3.0,
+    "duration": 3.0,
+    "gain_db": 1.0
+   },
+   {
+    "id": "note_ghibli",
+    "file": "ghibli-note-logo-flare.wav",
+    "start": 3.13,
+    "duration": 1.02,
+    "gain_db": -9.0
+   }
+  ]
+ },
+ "_note": "30 October 2026 v4 : stems on a timeline, no loop. Main track attack aligned on picture start (no long fade-in). Motion sounds = the three clips of the motion project at their own start, duration and gain, shifted by motion_start."
+}

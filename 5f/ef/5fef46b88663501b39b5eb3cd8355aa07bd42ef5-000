@@ -1,0 +1,165 @@
+{
+  "fps": 24,
+  "framesPerShot": 120,
+  "aspect": [
+    21,
+    9
+  ],
+  "previewResolution": [
+    1260,
+    540
+  ],
+  "shots": [
+    {
+      "name": "01_Establishing",
+      "label": "Approche trois quarts",
+      "focal": 35,
+      "start": [
+        18.75,
+        9.0,
+        31.0
+      ],
+      "end": [
+        16.25,
+        7.75,
+        27.25
+      ],
+      "targetStart": [
+        0,
+        4,
+        1
+      ],
+      "targetEnd": [
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "02_LowAngle",
+      "label": "Contre-plong\u00e9e du porche",
+      "focal": 28,
+      "start": [
+        6,
+        1.2,
+        17
+      ],
+      "end": [
+        4,
+        1.8,
+        15
+      ],
+      "targetStart": [
+        0,
+        4.6,
+        5
+      ],
+      "targetEnd": [
+        0,
+        5.2,
+        4
+      ]
+    },
+    {
+      "name": "03_RoofDetail",
+      "label": "Travelling le long des bardeaux",
+      "focal": 50,
+      "start": [
+        11.804,
+        10.879999999999999,
+        5.4399999999999995
+      ],
+      "end": [
+        11.804,
+        10.879999999999999,
+        -0.56
+      ],
+      "targetStart": [
+        1.8,
+        6,
+        3
+      ],
+      "targetEnd": [
+        1.8,
+        6,
+        -3
+      ]
+    },
+    {
+      "name": "04_Overhead",
+      "label": "Plong\u00e9e sur les deux pans",
+      "focal": 32,
+      "start": [
+        3,
+        22,
+        4
+      ],
+      "end": [
+        1,
+        20,
+        2
+      ],
+      "targetStart": [
+        0,
+        4,
+        1
+      ],
+      "targetEnd": [
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "05_RoofWireGhost",
+      "label": "Construction du toit, Wireframe Ghost",
+      "focal": 45,
+      "start": [
+        9,
+        9,
+        13
+      ],
+      "end": [
+        7,
+        9,
+        12
+      ],
+      "targetStart": [
+        0,
+        5.8,
+        2
+      ],
+      "targetEnd": [
+        0,
+        5.8,
+        2
+      ],
+      "wireGhost": true
+    },
+    {
+      "name": "06_Hero",
+      "label": "\u00c9l\u00e9vation finale",
+      "focal": 40,
+      "start": [
+        -20.0,
+        6.5,
+        32.25
+      ],
+      "end": [
+        -21.25,
+        10.2,
+        33.5
+      ],
+      "targetStart": [
+        0,
+        4,
+        1
+      ],
+      "targetEnd": [
+        0,
+        4.2,
+        1
+      ]
+    }
+  ]
+}

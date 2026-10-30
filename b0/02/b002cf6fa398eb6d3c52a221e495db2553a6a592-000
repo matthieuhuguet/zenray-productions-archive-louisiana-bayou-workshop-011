@@ -1,0 +1,38 @@
+{
+ "main_attack_in_source_s": 199.98,
+ "main_start_in_source_s": 199.97,
+ "v1": {
+  "source_lufs": {
+   "main": -19.76,
+   "second": -12.88,
+   "wind_a": -41.48,
+   "wind_b": -42.84
+  },
+  "crossfade_window_s": [
+   2.0,
+   4.0
+  ],
+  "stem_lufs": {
+   "main": -19.0,
+   "second": -29.8
+  },
+  "mix_lufs_whole": -16.5
+ },
+ "v2": {
+  "source_lufs": {
+   "main": -17.42,
+   "second": -12.81,
+   "wind_a": -41.48,
+   "wind_b": -42.84
+  },
+  "crossfade_window_s": [
+   8.0,
+   10.0
+  ],
+  "stem_lufs": {
+   "main": -18.8,
+   "second": -29.8
+  },
+  "mix_lufs_whole": -16.9
+ }
+}

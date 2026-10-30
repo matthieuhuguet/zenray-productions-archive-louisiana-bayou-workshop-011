@@ -1,0 +1,23 @@
+# Run the verified CPU sequence with resumable outputs, 29 October 2026, 19:25 Europe/Paris.
+import json,subprocess,time,os
+from pathlib import Path
+ROOT=Path('/Users/zenray/.claude/tmp/tmp-houdini-september-2026/tmp-bayou-louisiana/render/Cinematic-29-October-2026')
+CONFIG={'renderer':'/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/bin/husk','samples':64,'threads':14,'fps':24,'start':1,'count':720}
+def state(**values):
+ (ROOT/'RenderStatus.json').write_text(json.dumps({'pid':os.getpid(),'updated':time.time(),**values},indent=2))
+for frame in [1,241]:
+ image=ROOT/f'Verified{frame:04d}.exr';log=ROOT/f'Verified{frame:04d}.log'
+ assert image.exists() and image.stat().st_size>100000,f'Missing test image {frame}'
+ assert 'Error compiling' not in log.read_text() and 'Error:' not in log.read_text(),f'Invalid test {frame}'
+state(status='running',config=CONFIG)
+segments=[(1,480),(601,120)]
+with (ROOT/'FullRender.log').open('w') as log:
+ for start,count in segments:
+  command=[CONFIG['renderer'],'--engine','cpu','-p',str(CONFIG['samples']),'--threads',str(CONFIG['threads']),'-f',str(start),'-n',str(count),'--fps','24','--skip-existing-frames','-s','/Render/CINE_KARMA_SETTINGS','-o',str(ROOT/'Beauty.<F4>.exr'),str(ROOT/'Cinematic.usd')]
+  result=subprocess.run(command,stdout=log,stderr=subprocess.STDOUT)
+  if result.returncode:
+   state(status='failed',exitCode=result.returncode,config=CONFIG)
+   raise SystemExit(result.returncode)
+count=len(list(ROOT.glob('Beauty.[0-9][0-9][0-9][0-9].exr')))
+wire=len(list((ROOT/'Wireframe').glob('Wire.*.png')))
+state(status='complete' if count==600 and wire==120 else 'incomplete',completedBeautyFrames=count,completedWireFrames=wire,config=CONFIG)
